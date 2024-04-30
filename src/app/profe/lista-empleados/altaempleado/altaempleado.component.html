@@ -1,0 +1,26 @@
+<h1>Empleado</h1>
+
+<div>
+   <form [formGroup]="form" #frmEmpleado="ngForm" (ngSubmit)="operar()">
+    
+        @if(edicion){
+            <label for="">Id Empleado</label>
+             <input placeholder="Id empleado" [readOnly]="true" 
+             formControlName="idEmpleado">
+        }
+        <label for="">Nombre</label>
+        <input placeholder="Nombre" required formControlName="nombre">
+        <label for="">Dni</label>
+        <input placeholder="dni" required formControlName="dni">
+        <label for="">Sueldo</label>
+        <input placeholder="sueldo" required formControlName="sueldo">
+       
+        <button type="submit" [disabled]="frmEmpleado.invalid">Aceptar</button>
+        <button type="button" routerLink=""  >Cancelar</button>
+
+    </form>
+
+   
+
+</div>
+

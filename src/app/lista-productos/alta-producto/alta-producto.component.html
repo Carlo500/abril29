@@ -1,0 +1,39 @@
+<h1>Empleado</h1>
+
+<div>
+   <form [formGroup]="form" #frmEmpleado="ngForm" (ngSubmit)="operar()">
+    
+        @if(edicion){
+            <label for="">Id Empleado</label>
+             <input placeholder="product_id" [readOnly]="true" 
+             formControlName="product_id">
+        }
+        <label for="">id</label>
+        <input placeholder="product_id" required formControlName="product_id">
+        <label for="">Nombre</label>
+        <input placeholder="product_name" required formControlName="product_name">
+        <label for="">ID supplier</label>
+        <input placeholder="supplier_id" required formControlName="supplier_id">
+        <label for="">Id Categoria</label>
+        <input placeholder="category_id" required formControlName="category_id">
+        <label for="">Cantidad por unidad</label>
+        <input placeholder="quantity_per_unit" required formControlName="quantity_per_unit">
+        <label for="">Precio Unidad</label>
+        <input placeholder="unit_price" required formControlName="unit_price">
+        <label for="">Unidades en stock</label>
+        <input placeholder="units_in_stock" required formControlName="units_in_stock">
+        <label for="">unidades en productos</label>
+        <input placeholder="units_on_order" required formControlName="units_on_order">
+        <label for="">nivel de pedidos</label>
+        <input placeholder="reorder_level" required formControlName="reorder_level">
+        <label for="">Descuentos</label>
+        <input placeholder="discount" required formControlName="discount">
+       
+        <button type="submit" [disabled]="frmEmpleado.invalid">Aceptar</button>
+        <button type="button" routerLink=""  >Cancelar</button>
+
+    </form>
+
+   
+
+</div>

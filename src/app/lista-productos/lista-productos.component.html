@@ -1,0 +1,36 @@
+<h1>Empleados desde el back</h1>
+<table>
+  <caption>
+    Lista de empleados
+  </caption>
+  <tr>
+    <th>IdProducto</th>
+    <th>nombre</th>
+    <th>id suplier</th>
+    <th>id categoria</th>
+    <th>cantidad por unidad</th>
+    <th>precio unidad</th>
+    <th>unidades en stock</th>
+    <th>unidades en pedidos</th>
+    <th>nivel de restock</th>
+    <th>descuento</th>
+  </tr>
+  @for(elemento of productos;track elemento.product_id){
+  <tr>
+    <td>{{ elemento.product_id }}</td>
+    <td>{{ elemento.product_name }}</td>
+    <td>{{ elemento.supplier_id }}</td>
+    <td>{{ elemento.category_id }}</td>
+    <td>{{ elemento.quantity_per_unit }}</td>
+    <td>{{ elemento.unit_price }}</td>
+    <td>{{ elemento.units_in_stock }}</td>
+    <td>{{ elemento.units_on_order }}</td>
+    <td>{{ elemento.reorder_level }}</td>
+    <td>{{ elemento.discontinued }}</td>
+    <td><button type="button" [routerLink]="['edicion',elemento.product_id]">Modificar</button></td>
+    <td><button type="button" (click)="eliminar(elemento.product_id)">Eliminar</button></td>
+  </tr>
+  }
+</table>
+<button routerLink="alta">Alta de un nuevo empleado</button>
+<router-outlet></router-outlet>
